@@ -18,7 +18,7 @@ dist
 
 * NPM (no bower)
 * Jquery, lodash
-* Angular JS, Angular UI Bootstrap
+* Angular JS, Angular UI Bootstrap, Angular UI Router
 * Grunt: grunt-contrib-concat, grunt-contrib-copy, grunt-contrib-watch, jit-grunt, time-grunt,  grunt-newer,grunt-contrib-jshint, grunt-contrib-clean
 * Less, grunt grunt-contrib-less
 * BrowserSync: grunt-browser-sync, grunt-cache-bust
@@ -78,8 +78,9 @@ npm i --save lodash --save
 // angular
 npm i jquery angular bootstrap-less --save
 
-// angular ui
-npm i angular-ui-bootstrap --save-dev
+// angular addons
+npm i angular-ui-bootstrap --save
+npm i angular-ui-router --save
 
 
 

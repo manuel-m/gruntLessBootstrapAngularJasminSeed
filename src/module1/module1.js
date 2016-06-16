@@ -1,6 +1,6 @@
 (function () {
     'use strict';
-    angular.module('Mod1', ['ui.bootstrap'])
+    angular.module('Mod1', ['dr.core'])
         .factory('IdentityService', function () {
             return {
                 first_name: 'John',

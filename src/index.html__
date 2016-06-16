@@ -2,7 +2,7 @@
 <html lang="en" ng-app="MyApp">
 <head>
     <meta charset="UTF-8">
-    <title>Template Angular v1 Less ...</title>
+    <title>Test application</title>
     <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="vendors.css"/>
     <link rel="stylesheet" href="app.css"/>

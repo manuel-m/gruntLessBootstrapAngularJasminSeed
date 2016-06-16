@@ -24,9 +24,9 @@ module.exports = function (grunt) {
         vendors_js = [
             'node_modules/lodash/lodash.js',
             'node_modules/jquery/dist/jquery.js',
-            //'node_modules/bootstrap-less/js/bootstrap.js',
             'node_modules/angular/angular.js',
-            'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
+            'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js',
+            'node_modules/angular-ui-router/release/angular-ui-router.js'
         ],
         app_js = [src_js, '!' + test_src_js], // [!] exclude *.test.js
         vendors_dist_js = 'dist/vendors.js',
@@ -122,15 +122,19 @@ module.exports = function (grunt) {
         watch: {
             htmls: {
                 files: src_html,
-                tasks: ['copy:html']
+                //tasks: ['copy:html']
+                tasks: ['dev']
             },
             scripts: {
                 files: src_js,
-                tasks: ['scripts:dev']
+                //tasks: ['scripts:dev']
+                tasks: ['dev']
+
             },
             styles: {
                 files: [app_less, 'custom/bootstrap-less/**/*.less'], // which files to watch
-                tasks: ['newer:less:app', 'less:vendors'],
+                //tasks: ['newer:less:app', 'less:vendors'],
+                tasks: ['dev'],
                 options: {
                     nospawn: true
                 }
@@ -167,7 +171,7 @@ module.exports = function (grunt) {
 
     // default
     // [!] watch is blocking, so last one
-    grunt.registerTask('default', ['dev', 'browserSync', 'watch']);
+    grunt.registerTask('default', ['clean', 'dev', 'browserSync', 'watch']);
 
     // dev
     grunt.registerTask('scripts:dev', [
