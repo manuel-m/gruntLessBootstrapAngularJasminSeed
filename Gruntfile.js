@@ -33,7 +33,11 @@ module.exports = function (grunt) {
         app_dist_js = 'dist/app.js',
 
     // [!] better testing against concatenated code (closer from production)
-        test_js = [vendors_dist_js, vendors_mock_js, app_dist_js, test_src_js],
+        test_js = [
+            'dist/vendors.*.js',
+            vendors_mock_js,
+            'dist/app.*.js',
+            test_src_js],
 
         lint_js = ['Gruntfile.js', src_js, test_src_js],
 
