@@ -23,7 +23,7 @@ module.exports = function (grunt) {
         vendors_js = [
             'node_modules/lodash/lodash.js',
             'node_modules/jquery/dist/jquery.js',
-            'node_modules/bootstrap-less/js/bootstrap.js',
+            //'node_modules/bootstrap-less/js/bootstrap.js',
             'node_modules/angular/angular.js',
             'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
         ],

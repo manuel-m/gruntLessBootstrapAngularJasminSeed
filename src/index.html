@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <title>Test application</title>
     <meta name="viewport" content="width=device-width">
-    <link rel="stylesheet" href="vendors.css" />
-    <link rel="stylesheet" href="app.css" />
+    <link rel="stylesheet" href="vendors.css"/>
+    <link rel="stylesheet" href="app.css"/>
 </head>
 <body>
 
@@ -13,14 +13,17 @@
 <div class="container">
 
     <div class="page-header">
-        <h1>Example page header <small>Subtext for header</small></h1>
+        <h1>Example page header
+            <small>Subtext for header</small>
+        </h1>
     </div>
 
     <nav class="navbar navbar-default">
         <div class="container-fluid">
             <!-- Brand and toggle get grouped for better mobile display -->
             <div class="navbar-header">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
@@ -35,7 +38,8 @@
                     <li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li>
                     <li><a href="#">Link</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -56,7 +60,8 @@
                 <ul class="nav navbar-nav navbar-right">
                     <li><a href="#">Link</a></li>
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true"
+                           aria-expanded="false">Dropdown <span class="caret"></span></a>
                         <ul class="dropdown-menu">
                             <li><a href="#">Action</a></li>
                             <li><a href="#">Another action</a></li>
@@ -77,9 +82,38 @@
     </div>
 
 
-    <div class="col-md-4"><span class="label label-info">col1</span></div>
-    <div class="col-md-4"><span class="label label-danger">col2</span></div>
-    <div class="col-md-4"><span class="label label-warning">col3</span></div>
+    <div class="row">
+        <div class="col-md-4"><span class="label label-info">col1</span></div>
+        <div class="col-md-4"><span class="label label-danger">col2</span></div>
+        <div class="col-md-4"><span class="label label-warning">col3</span></div>
+    </div>
+
+    <div ng-controller="ModalDemoCtrl">
+        <script type="text/ng-template" id="myModalContent.html">
+            <div class="modal-header">
+                <h3 class="modal-title">I'm a modal!</h3>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li ng-repeat="item in items">
+                        <a href="#" ng-click="$event.preventDefault(); selected.item = item">{{ item }}</a>
+                    </li>
+                </ul>
+                Selected: <b>{{ selected.item }}</b>
+            </div>
+            <div class="modal-footer">
+                <button class="btn btn-primary" type="button" ng-click="ok()">OK</button>
+                <button class="btn btn-warning" type="button" ng-click="cancel()">Cancel</button>
+            </div>
+        </script>
+
+        <button type="button" class="btn btn-default" ng-click="open()">Open me!</button>
+        <button type="button" class="btn btn-default" ng-click="open('lg')">Large modal</button>
+        <button type="button" class="btn btn-default" ng-click="open('sm')">Small modal</button>
+        <button type="button" class="btn btn-default" ng-click="toggleAnimation()">Toggle Animation ({{ animationsEnabled }})</button>
+        <div ng-show="selected">Selection from a modal: {{ selected }}</div>
+    </div>
+
 </div>
 
 
