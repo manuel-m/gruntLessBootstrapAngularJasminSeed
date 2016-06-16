@@ -1,9 +1,10 @@
 /*
 
  dist
- ├── app.js                    // application JS code
- ├── main.css                  // less output
- └── vendors.js                // vendors JS code
+ ├── app.js
+ ├── app.css
+ ├── vendors.css
+ └── vendors.js
 
  */
 
@@ -16,15 +17,15 @@ module.exports = function (grunt) {
         src_js = 'src/**/*.js',
         test_src_js = 'src/**/*.test.js',
 
-        jquery_js = 'node_modules/jquery/dist/jquery.js',
-        bootstrap_js = 'node_modules/bootstrap-less/js/bootstrap.js',
-        angular_js = 'node_modules/angular/angular.js',
+
         angular_mock_js = 'node_modules/angular-mocks/angular-mocks.js',
         vendors_mock_js = angular_mock_js,
         vendors_js = [
-            jquery_js,
-            bootstrap_js,
-            angular_js
+            'node_modules/lodash/lodash.js',
+            'node_modules/jquery/dist/jquery.js',
+            'node_modules/bootstrap-less/js/bootstrap.js',
+            'node_modules/angular/angular.js',
+            'node_modules/angular-ui-bootstrap/dist/ui-bootstrap-tpls.js'
         ],
         app_js = [src_js, '!' + test_src_js], // [!] exclude *.test.js
         vendors_dist_js = 'dist/vendors.js',
