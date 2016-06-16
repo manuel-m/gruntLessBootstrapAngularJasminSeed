@@ -1,10 +1,11 @@
 /*
 
  dist
- ├── app.js
- ├── app.css
- ├── vendors.css
- └── vendors.js
+ ├── index.html
+ ├── app.xyz.js
+ ├── app.xyz.css
+ ├── vendors.xyz.css
+ └── vendors.xyz.js
 
  */
 
@@ -147,6 +148,16 @@ module.exports = function (grunt) {
                     open: false // [!] prevent from browser new instance opening
                 }
             }
+        },
+        cacheBust: {
+            taskName: {
+                options: {
+                    baseDir: 'dist/',
+                    assets: ['*.css', '*.js'],
+                    deleteOriginals: true
+                },
+                src: ['dist/index.html']
+            }
         }
     });
 
@@ -170,8 +181,8 @@ module.exports = function (grunt) {
     grunt.registerTask('styles:dist', ['less']);
 
 
-    grunt.registerTask('dev', ['copy:html', 'scripts:dev', 'styles:dev']);
-    grunt.registerTask('dist', ['clean', 'copy:html', 'scripts:dist', 'styles:dist']);
+    grunt.registerTask('dev', ['copy:html', 'scripts:dev', 'styles:dev', 'cacheBust']);
+    grunt.registerTask('dist', ['clean', 'copy:html', 'scripts:dist', 'styles:dist', 'cacheBust']);
 
     // test
     grunt.registerTask('test', ['dist', 'karma']);
