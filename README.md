@@ -1,0 +1,2 @@
+# gruntLessBootstrapAngularJasminSeed
+template project
