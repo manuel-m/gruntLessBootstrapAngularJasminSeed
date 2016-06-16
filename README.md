@@ -1,4 +1,4 @@
-# Template project: Grunt, less, Angular, Boostrap, Jasmine
+# Template project: Grunt, less, Angular, Bootstrap, Jasmine
 
 * Tests are performed against dist assets.  
 * Application and vendors assets are splitted
